@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top py-2 shadow-sm">
+  <!-- <img src="assets\icon\Logo.png" alt="Logo" style="height: 3%;width: 4%;"> -->
+  <ion-icon name="people-outline" class="px-2"></ion-icon>
+  <a class="navbar-brand font-weight-bold text-center size mr-0" routerLink="/home">College Platform</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!-- <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown size1">
+      <a class="nav-link dropdown-toggle active size1" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <ion-icon name="people-outline" class=""></ion-icon>
+      </a>
+      <div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item text-light" routerLink="/mens">Men</a>
+        <a class="dropdown-item text-light" routerLink="/women">Women</a>
+        <a class="dropdown-item text-light" routerLink="/elec">Electronics</a>
+        <a class="dropdown-item text-light" routerLink="/jackets">Jackets</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item text-light" routerLink="/others">Others</a>
+      </div>
+    </li>
+  </ul> -->
+  <div class="">
+    <a class="border-left navbar-brand font-weight-bold col-md-2 text-center mx-0" routerLink="/home">[clg name]</a>
+  </div>
+
+  <div class="mr-auto"></div>
+  
+  <form class="form-inline my-lg-0" >
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> 
+    <!-- <ion-icon name="search" class="px-2"></ion-icon> -->
+  </form>
+
+  <div class="dropdown" >
+    <ion-icon name="notifications-outline" class="px-2"></ion-icon>
+    <ion-icon name="paper-plane-outline" class="px-2"></ion-icon>
+  </div>
+  
+  <!-- <ion-label class="text-white">Light Mode</ion-label> -->
+  <!-- <ion-toggle (ionChange)="lighttheme($event)"></ion-toggle> -->
+
+  <div class="dropdown">
+    <ion-icon name="person-outline" class="px-2 dropbtn"></ion-icon>
+    <div class="dropdown-content">
+      <!-- <a class="nav-link" routerLink="/login" *ngIf="this.service.current_mail == '' && this.service.current_pass == ''">Login</a> -->
+      <!-- <a class="nav-link" *ngIf="this.service.current_mail != '' && this.service.current_pass != ''" (click)="logout()">Logout</a> -->
+      <a class="nav-link" routerLink="/profile">Profile</a>
+      <div class="dropdown-divider"></div>
+      <a class="nav-link" routerLink="/order-history">My Order History</a>
+      <a class="nav-link" routerLink="/cart">My Cart</a>
+    </div>
+  </div>
+  
+  
+</div>
+</nav>
+
+
