@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light sticky-top py-2 shadow-sm">
+<nav class="navbar colorThem navbar-expand-lg sticky-top py-2 shadow-sm" [ngStyle]="{'color': chTheme}">
   <!-- <img src="assets\icon\Logo.png" alt="Logo" style="height: 3%;width: 4%;"> -->
   <ion-icon name="people-outline" class="px-2"></ion-icon>
   <a class="navbar-brand font-weight-bold text-center size mr-0" routerLink="/home">College Platform</a>
@@ -23,7 +23,7 @@
     </li>
   </ul> -->
   <div class="">
-    <a class="border-left navbar-brand font-weight-bold col-md-2 text-center mx-0" routerLink="/home">[clg name]</a>
+    <span class="border-left navbar-brand font-weight-bold col-md-2 text-center mx-0" routerLink="/home">[clg name]</span>
   </div>
 
   <div class="mr-auto"></div>
@@ -38,8 +38,8 @@
     <ion-icon name="paper-plane-outline" class="px-2"></ion-icon>
   </div>
   
-  <!-- <ion-label class="text-white">Light Mode</ion-label> -->
-  <!-- <ion-toggle (ionChange)="lighttheme($event)"></ion-toggle> -->
+  <ion-label class="">Light Mode</ion-label>
+  <ion-toggle (ionChange)="lighttheme($event)"></ion-toggle>
 
   <div class="dropdown">
     <ion-icon name="person-outline" class="px-2 dropbtn"></ion-icon>
@@ -55,6 +55,7 @@
   
   
 </div>
+
 </nav>
 
 
