@@ -10,8 +10,8 @@ import { UserService } from '../service/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  chTheme = "black" ;
-  notTheme = "white";
+  bgColor = "white" ;
+  textColor = "black";
   mode = "";
 
   constructor(public LoginService : UserService,public Alert : AlertController) { }
@@ -25,14 +25,14 @@ export class HeaderComponent implements OnInit {
     console.log(event.detail.checked);
     if (event.detail.checked) {
       document.body.setAttribute('color-theme','dark');
-      this.chTheme = 'white';
-      this.notTheme = 'black';
+      this.LoginService.bgColor = this.bgColor = 'black';
+      this.LoginService.textColor = this.textColor = 'white';
       this.mode = "Dark Mode";
     }
     else{
       document.body.setAttribute('color-theme','light');
-      this.chTheme = 'black';
-      this.notTheme = 'white';
+      this.LoginService.bgColor = this.bgColor = 'white';
+      this.LoginService.textColor = this.textColor = 'black';
       this.mode = "Light Mode";
     }
   }

@@ -1,14 +1,75 @@
 <app-header></app-header>
 <ion-content>
 
-  <div class="row mt-4 mx-5">
-    <div class="col-md-4 text-center border rounded">
-      <div class="text-center" *ngFor="let i of [4,5,6],let index = index">
-        <p>chat {{i}} index {{index}}</p>
+  <div class="row mt-5 mx-5 heightMax">
+    <div class="col-md-4 border rounded scrollBar heightMax" >
+      <div class="clickable row center" *ngFor="let i of arr,let index = index">
+
+          <div class="col-md-2 p-0 py-1"> 
+            <img class = "ppCircle" src="/assets/icon/default-profile-croped.jpg" alt="pp">
+          </div >
+
+          <div class="col border-bottom mt-auto">
+            <p>chat {{i}} index {{index}} he he</p>
+          </div>
+          <div class="col-3">
+            <!-- Empty Space -->
+          </div>
+
       </div>
     </div>
-    <div class="col text-center border rounded">
-      <p>chats</p>
+    <div class="col border rounded heightMax">
+      <div class="row">
+        <div class="col-1 p-1"> 
+          <img class = "ppCircle" src="/assets/icon/default-profile-croped.jpg" alt="pp">
+        </div>
+
+        <div class="col text-align"> 
+          <h4> Name here </h4>
+        </div>
+      </div>
+
+      <div class="row border scroll text-center " style="height: 57vh">
+        <div *ngFor="let Message of all_msgs"> 
+          <p style="text-align:left;" class="m-0" *ngIf="Message.from != 'user'">
+            
+            {{Message.msg}} <br> {{Message.date_time | date:'short'}}  
+          </p>
+          <p class="text-end m-0" *ngIf="Message.from == 'user'">
+            {{Message.msg}} <br> {{Message.date_time | date:'short'}} 
+          </p>
+        </div>
+      </div>
+
+
+        <nav class="row p-1 navHeight" >
+          <div class = " p-0 m-0 dropdown">
+            <ion-icon class="p-2" name="attach-outline"></ion-icon>
+            <div class = "dropdown-content">
+              <ion-icon name="image-outline" ></ion-icon>
+              <ion-icon name="document-attach-outline"></ion-icon>
+            </div>
+          </div>
+          
+          <div class = " p-0 m-0 dropdown">
+            <ion-icon class="p-2" name="sad-outline"></ion-icon>
+            <div class = "dropdown-content">
+              <ion-icon class="p-2" name="happy-outline"></ion-icon>
+            </div>
+          </div>
+          <div>
+
+          </div>
+          <div class="col m-auto pb-2">
+            <input [ngStyle]="{'color': this.LoginService.textColor}"  [ngStyle]="{'background-color': LoginService.bgColor}" class="w-100 p-2 textBox" type="text" placeholder="Message" [(ngModel)]="sent_msg"> 
+          </div>
+          <div class = " pr-2 text-center"> 
+            <ion-icon class="p-2 " name="paper-plane-outline"></ion-icon>
+          </div>
+          
+
+        </nav>
+        
     </div>
   </div>
 

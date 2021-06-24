@@ -8,5 +8,8 @@ export class UserService {
   current_mail = "";
   current_pass = "";
 
+  bgColor = "white";
+  textColor = "black";
+
   constructor() { }
 }
