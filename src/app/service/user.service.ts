@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  current_mail = "";
-  current_pass = "";
+  current_mail = "defw";
+  current_pass = "223";
 
   bgColor = "white";
   textColor = "black";
