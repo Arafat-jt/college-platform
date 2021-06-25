@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   bgColor = "white" ;
   textColor = "black";
   mode = "";
+  currentCum = "";
 
   constructor(public LoginService : UserService,public Alert : AlertController) { }
 
@@ -76,6 +77,13 @@ export class HeaderComponent implements OnInit {
     });
 
     await alert.present();
+  }
+
+  changeCum(currentCum){
+    this.currentCum = currentCum;
+    if(currentCum == 'Coterie'){
+      this.currentCum = "";
+    }
   }
 
   ngOnInit() {}
