@@ -34,23 +34,23 @@
   
 
   <div class="navbar-brand" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''">
-    <a href="" >
+    <a href="#">
       <ion-icon name="notifications-outline" class="px-2"></ion-icon>
     </a>
-    <a href="">
+    <a href="#">
       <ion-icon name="chatbox-ellipses-outline" routerLink="/chat" class="px-2"></ion-icon>
     </a>
   
     <div class="dropdown nav-item" style="float:right;">
-      <a href="">
+      <a href="#">
         <ion-icon name="settings-outline" class="px-2"></ion-icon>
       </a>
       <div class="dropdown-menu dropdown-menu-right bg-dark p-1" style="right: 0;">
         <a class="dropdown-item text-light" routerLink="/profile">Profile</a>
-        <a class="dropdown-item text-light" routerLink="">kuch</a>
-        <a class="dropdown-item text-light" routerLink="">kuch</a>
-        <a class="dropdown-item text-light" routerLink="">
-          <ion-toggle mode ="ios" size="small" (ionChange)="lighttheme($event)"></ion-toggle>
+        <a class="dropdown-item text-light" routerLink="#">kuch</a>
+        <a class="dropdown-item text-light" routerLink="#">kuch</a>
+        <a class="dropdown-item text-light" routerLink="#">
+          <ion-toggle mode ="ios" size="small" routerLink="#" (ionChange)="lighttheme($event)"></ion-toggle>
         </a>
       </div>
     </div>
