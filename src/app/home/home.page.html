@@ -1,15 +1,53 @@
 <app-header></app-header>
 
 <ion-content>
+  <!-- whole page  -->
   <div class="row mt-4 mx-5">
+    <!-- left col, all posts -->
     <div class="col-md-8 text-center">
-      <p class="border rounded shadow">
-        Post Here
-      </p> 
+      <div class="row border rounded shadow p-1">
+        <div class="col p-2 col-size">
+          <div class="row m-0 text-center">
+            <ion-icon name="logo-medium"></ion-icon>
+            <span class="filter-tag px-1">
+              My Feed
+            </span> 
+          </div>
+        </div>
+        <div class="col p-2 col-size">
+          <div class="row m-0 text-center">
+            <img src="assets/icon/top-hot.png" alt="" class="header-icons" *ngIf="LoginService.bgColor == 'white'">
+            <img src="assets/icon/top-hot.png" alt="" class="header-icons" id="inverted-img" *ngIf="LoginService.bgColor == 'black'">
+            <span class="filter-tag px-1">
+              Most Viewed
+            </span> 
+          </div>
+        </div>
+        <div class="col p-2 col-size">
+          <img src="assets/icon/recent.png" alt="" class="header-icons pb-1" *ngIf="LoginService.bgColor == 'white'">
+          <img src="assets/icon/recent.png" alt="" class="header-icons pb-1" id="inverted-img" *ngIf="LoginService.bgColor == 'black'">
+          <span class="filter-tag px-1">
+            Recent
+          </span> 
+        </div>
+        <div class="col p-2 col-size">
+          <div class="row m-0 text-center">
+          <ion-icon name="alert-circle" id="imp"></ion-icon>
+          <span class="filter-tag px-1">
+            Important
+          </span> 
+          </div>
+        </div>
+      </div> 
+      <div class="row border rounded shadow p-1 mt-3">
+        <div class="col-2 m-2 rounded shadow">
+          <img src="assets/icon/preview.png" alt="" class="post-img-preview">
+        </div>
+      </div>
     </div>
     <div class="col-md-4 text-center">
       <div>
-        <a href="">
+        <a>
           <p class="border rounded shadow right-cols">Top news</p>
         </a>
       </div>

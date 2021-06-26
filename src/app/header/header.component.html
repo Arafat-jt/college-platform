@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg sticky-top py-2 navbar-dark bg-dark" >
-
   <ul class="navbar-nav m-0">
     <li class="nav-item dropdown size1">
         <a class="navbar-brand font-weight-bold text-center m-0 p-1 pr-3" routerLink="/home">Coterie</a>
@@ -11,8 +10,6 @@
       </div>
     </li>
   </ul>
-
-<nav class="navbar navbar-expand-lg sticky-top py-2 shadow-sm" [ngStyle]="{'color': textColor}"  [ngStyle]="{'background-color': bgColor}">
 
   <!-- <img src="assets\icon\Logo.png" alt="Logo" style="height: 3%;width: 4%;"> -->
   
@@ -86,26 +83,27 @@
   </div>
   
 
-  <div class="navbar-brand m-0 pt-2" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''">
-    <a href="" >
-      <ion-icon name="notifications-outline" class="px-2 m-0"></ion-icon>
-    </a>
-    <a href="">
-      <ion-icon name="chatbox-ellipses-outline" routerLink="/chat" class="px-2 m-0"></ion-icon>
-    </a>
-  </div>
 
-  <div class="navbar-brand dropdown nav-item" style="float:right;">
-    <a href="">
-      <ion-icon name="settings-outline" class="px-2"></ion-icon>
+  <div class="navbar-brand" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''">
+    <a href="#">
+      <ion-icon name="notifications-outline" class="px-2"></ion-icon>
     </a>
-    <div class="dropdown-menu dropdown-menu-right bg-dark p-1 m-0" style="right: 0;">
-      <a class="dropdown-item text-light" routerLink="/profile">Profile</a>
-      <a class="dropdown-item text-light" routerLink="">kuch</a>
-      <a class="dropdown-item text-light" routerLink="">kuch</a>
-      <a class="dropdown-item text-light" routerLink="#">
-        <ion-toggle mode ="ios" size="small" (ionChange)="lighttheme($event)"></ion-toggle>
+    <a href="#">
+      <ion-icon name="chatbox-ellipses-outline" routerLink="/chat" class="px-2"></ion-icon>
+    </a>
+  
+    <div class="dropdown nav-item" style="float:right;">
+      <a href="#">
+        <ion-icon name="settings-outline" class="px-2"></ion-icon>
       </a>
+      <div class="dropdown-menu dropdown-menu-right bg-dark p-1" style="right: 0;">
+        <a class="dropdown-item text-light" routerLink="/profile">Profile</a>
+        <a class="dropdown-item text-light" routerLink="#">kuch</a>
+        <a class="dropdown-item text-light" routerLink="#">kuch</a>
+        <a class="dropdown-item text-light" routerLink="#">
+          <ion-toggle mode ="ios" size="small" routerLink="#" (ionChange)="lighttheme($event)"></ion-toggle>
+        </a>
+      </div>
     </div>
   </div>
 </div>  
