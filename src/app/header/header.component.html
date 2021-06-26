@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top py-2 navbar-dark bg-dark" [ngStyle]="{'color': textColor}"  [ngStyle]="{'background-color': bgColor}">
+<nav class="navbar navbar-expand-lg sticky-top py-2 navbar-dark bg-dark" >
 
   <ul class="navbar-nav m-0">
     <li class="nav-item dropdown size1">
@@ -32,30 +32,80 @@
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
   </form>
 
-  <a class="nav-link navbar-brand" (click)="presentAlert()" *ngIf="this.LoginService.current_mail == '' && this.LoginService.current_pass == ''">Login</a>
-  <a class="nav-link navbar-brand" (click)="logout()" routerLink="" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''" >Logout</a>
+  <a class="nav-link navbar-brand m-0" (click)="presentAlert()" *ngIf="this.LoginService.current_mail == '' && this.LoginService.current_pass == ''">Login</a>
+  <a class="nav-link navbar-brand m-0" (click)="logout()" routerLink="" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''" >Logout</a>
+  <a class="nav-link navbar-brand m-0" data-toggle="modal"  data-backdrop="false" data-target="#SignupForm" *ngIf="this.LoginService.current_mail == '' && this.LoginService.current_pass == ''">Sign-up</a>
+
+
+  <div class="modal fade" id="SignupForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="exampleModalLongTitle">Create a new account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" style="text-transform: capitalize;" class="form-control" id="inputFirstName">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" style="text-transform: capitalize;" class="form-control" id="inputLastName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="inputPassword">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <label for="inputUniversity">University</label>
+                <select id="inputUniversity" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Vu</option>
+                  <option>Vit</option>
+                  <option>Viit</option>
+                  <option>others</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
-  <div class="navbar-brand" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''">
+  <div class="navbar-brand m-0 pt-2" *ngIf="this.LoginService.current_mail != '' && this.LoginService.current_pass != ''">
     <a href="" >
-      <ion-icon name="notifications-outline" class="px-2"></ion-icon>
+      <ion-icon name="notifications-outline" class="px-2 m-0"></ion-icon>
     </a>
     <a href="">
-      <ion-icon name="chatbox-ellipses-outline" routerLink="/chat" class="px-2"></ion-icon>
+      <ion-icon name="chatbox-ellipses-outline" routerLink="/chat" class="px-2 m-0"></ion-icon>
     </a>
-  
-    <div class="dropdown nav-item" style="float:right;">
-      <a href="">
-        <ion-icon name="settings-outline" class="px-2"></ion-icon>
+  </div>
+
+  <div class="navbar-brand dropdown nav-item" style="float:right;">
+    <a href="">
+      <ion-icon name="settings-outline" class="px-2"></ion-icon>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right bg-dark p-1 m-0" style="right: 0;">
+      <a class="dropdown-item text-light" routerLink="/profile">Profile</a>
+      <a class="dropdown-item text-light" routerLink="">kuch</a>
+      <a class="dropdown-item text-light" routerLink="">kuch</a>
+      <a class="dropdown-item text-light" routerLink="#">
+        <ion-toggle mode ="ios" size="small" (ionChange)="lighttheme($event)"></ion-toggle>
       </a>
-      <div class="dropdown-menu dropdown-menu-right bg-dark p-1" style="right: 0;">
-        <a class="dropdown-item text-light" routerLink="/profile">Profile</a>
-        <a class="dropdown-item text-light" routerLink="">kuch</a>
-        <a class="dropdown-item text-light" routerLink="">kuch</a>
-        <a class="dropdown-item text-light" routerLink="">
-          <ion-toggle mode ="ios" size="small" (ionChange)="lighttheme($event)"></ion-toggle>
-        </a>
-      </div>
     </div>
   </div>
 </div>  
