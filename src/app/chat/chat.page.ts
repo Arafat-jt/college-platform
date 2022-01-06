@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { UserService } from '../service/user.service';
 
@@ -10,6 +10,7 @@ import { UserService } from '../service/user.service';
 })
 export class ChatPage implements OnInit {
 
+  @Input() mode
   arr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 
   sent_msg: string;
@@ -24,6 +25,7 @@ export class ChatPage implements OnInit {
   constructor(public LoginService : UserService, private http : HttpClient, public toastc : ToastController)
    { this.retrive_msg();}
 
+   
   async presentToast(msg){
     const toast =  await this.toastc.create({
       message: msg,

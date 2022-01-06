@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { stringify } from 'json5';
 import { UserService } from '../service/user.service';
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   bgColor = "white" ;
   textColor = "black";
-  mode = "";
+  @Output() mode = "";
   currentCum = "";
 
   constructor(public LoginService : UserService,public Alert : AlertController) { }
